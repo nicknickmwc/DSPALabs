@@ -2,7 +2,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class Board {
-    private int[][] blocks; //   Наше поле. пустое место будем обозначать нулем.
+    private int[][] blocks; //   Наше поле. Пустое место будем обозначать нулем.
     private int zeroX;    // это нам пригодится в будущем - координаты нуля
     private int zeroY;
     private int h; //  мера
@@ -13,6 +13,7 @@ public class Board {
 
         h = 0;
         for (int i = 0; i < blocks.length; i++) {  //  в этом цикле определяем координаты нуля и вычисляем h(x)
+            //System.out.println();
             for (int j = 0; j < blocks[i].length; j++) {
                 if (blocks[i][j] != (i*dimension() + j + 1) && blocks[i][j] != 0) {  // если 0 не на своем месте - не считается
                     h += 1;

@@ -6,18 +6,19 @@ public class Main {
     public static void main(String[] args) {
         //Генерация фишек
         Pyatnashki p = new Pyatnashki();
-        int [][] pole = new int[4][4];
-        pole = p.genetation();
+        int [][] pole = new int[][] {{0, 1, 2, 3}, {5, 6, 7, 8}, {9, 10, 11, 12}, {13, 14, 15, 4}};
         System.out.println();
-        System.out.println(Pyatnashki.number_of_riots(pole));
+        //System.out.println(Pyatnashki.number_of_riots(pole));
 
         Board initial = new Board(pole);
         Solver solver = new Solver(initial);
         System.out.println("Minimum number of moves = " + solver.moves());
-        for (Board board : solver.solution())
+        for (Board board : solver.solution()) {
+            System.out.println(board.h());
+            //System.out.println(Integer.toString(pole[2].length));
             System.out.println(board);
 
-
+        }
     }
     static class Pyatnashki{
         public static int[][] genetation(){
